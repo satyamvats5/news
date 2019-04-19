@@ -1,0 +1,31 @@
+{
+  "name": "newsapi",
+  "version": "1.0.0",
+  "description": "An Application for providing news to users according to their preferrance.\u001b[Ds\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/satyamvats/newsapi.git"
+  },
+  "author": "Satyam Kumar",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/satyamvats/newsapi#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "memcached": "^2.2.2",
+    "path": "^0.12.7",
+    "pug": "^2.0.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.11"
+  }
+}

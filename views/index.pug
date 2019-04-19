@@ -1,0 +1,60 @@
+head
+  link(href='1.css' rel='stylesheet')
+  link#bootstrap-css(href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous' rel='stylesheet')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')
+  script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
+form#form-login(action='/' method='POST')
+  .fixed-top
+    .container-fluid.bg-light
+      .row.align-items-center.justify-content-center
+        .col-md-2.pt-3
+          .form-group
+            select#inputState.form-control(name='country')
+              option(selected='' value="") Country
+              option(value='us') USA
+              option(value='in') India
+              option Maruti
+              option Tesla
+        .col-md-2.pt-3
+          .form-group
+            select#inputState.form-control(name='category')
+              option(selected='' value="") Category
+              option(value="business") Business
+              option(value="entertainment") entertainment
+              option(value="general") General
+              option(value="health") Health
+              option(value="science") Science
+              option(value="sports") Sports
+              option(value="technology") Technology
+        .col-md-2.pt-3
+          .form-group
+            input#email.form-control(type='text' name='keys' placeholder='search by keys' value='')
+        .col-md-2.pt-3
+          button.btn.btn-success.btn-block(type='submit') Search
+section.our-webcoderskull.padding-lg(style='margin-top:15px;')
+  .container
+    .col-md-12.pt-3
+      h6
+        each data in params
+          <span id="lxd" class="badge badge-warning">#{data}</span>
+    .row.heading.heading-icon
+      if ers
+        h2(style="color: red") #{ers}
+      else 
+        h2 Your News 
+    if data.length > 0
+      each val in data
+        h1 #{val.author}
+        ul.row
+          li.col-12.col-lg-12
+            .cnt-block.equal-hight(style='height: 430px;')
+              figure
+                a(href=val.url)
+                  img.img-responsive(src=val.urlToImage alt='Image URL')
+              <p> Click on the image to visit full news </p>
+              h3
+                a(href=val.url)
+                  | #{val.title}
+              if val.description
+                - var str = val.description.split(' ').slice(0, 100).join(' ');
+              p #{str}
