@@ -1,5 +1,6 @@
 head
   link(href='1.css' rel='stylesheet')
+  link(rel="icon" href="/logo.jpg" type="image/gif")
   link#bootstrap-css(href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous' rel='stylesheet')
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')
   script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
@@ -11,7 +12,6 @@ form#form-login(action='/' method='POST')
           .form-group
             select#inputState.form-control(name='country')
               option(selected='' value="") Country
-              option(value='ae')
               option(value='ar') Argentina
               option(value='at') Austria
               option(value='au') Australia
@@ -19,7 +19,6 @@ form#form-login(action='/' method='POST')
               option(value='bg') Bulgeria
               option(value='br') Brazil
               option(value='ca') Canada
-              option(value='ch')
               option(value='cn') China
               option(value='co') Colombia
               option(value='cu') Cuba
@@ -27,7 +26,6 @@ form#form-login(action='/' method='POST')
               option(value='de') Germany
               option(value='eg') Egypt
               option(value='fr') France
-              option(value='gb')
               option(value='gr') Greece
               option(value='hk') Hong Kong
               option(value='hu') Hungary
@@ -98,11 +96,11 @@ section.our-webcoderskull.padding-lg(style='margin-top:15px;')
           li.col-12.col-lg-12
             .cnt-block.equal-hight(style='height: 430px;')
               figure
-                a(href=val.url)
+                a(href=val.url target="_blank")
                   img.img-responsive(src=val.urlToImage alt='Image URL')
               <p> Click on the image to visit full news </p>
               h3
-                a(href=val.url)
+                a(href=val.url target="_blank")
                   | #{val.title}
               if val.description
                 - var str = val.description.split(' ').slice(0, 100).join(' ');
